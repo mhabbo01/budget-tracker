@@ -4,11 +4,10 @@ const CACHE_NAME = APP_PREFIX + VERSION;
 
 const FILES_TO_CACHE = [
     "./index.html",
-    "./assets/css/style.css",
-    "./index.js",
-    "./idb.js",
+    "./css/styles.css",
+    "./js/index.js",
+    "./js/idb.js",
     "./manifest.json",
-    "./api.js",
     "./icons/icon-512x512.png",
     "./icons/icon-384x384.png",
     "./icons/icon-192x192.png",
@@ -26,7 +25,7 @@ self.addEventListener('install', function (e) {
             console.log('installing cache : ' + CACHE_NAME)
             return cache.addAll(FILES_TO_CACHE)
         })
-    )
+    );
 });
 
 self.addEventListener('activate', function (e) {
@@ -60,5 +59,5 @@ self.addEventListener('fetch', function(e) {
                 return fetch(e.request)
             }
         })
-    )
-})
+    );
+});
